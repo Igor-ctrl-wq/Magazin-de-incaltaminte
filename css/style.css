@@ -136,3 +136,35 @@ footer {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Umbră pentru text */
     border-radius: 10px; /* Colțuri rotunjite (opțional) */
 }
+
+footer {
+    position: fixed; /* Fixează footer-ul în partea de jos */
+    bottom: 0; /* Poziționează-l la baza paginii */
+    left: 0;
+    width: 100%; /* Acoperă întreaga lățime a paginii */
+    background-color: #f9f9f9; /* Fundal deschis */
+    color: #333; /* Text închis */
+    text-align: center; /* Text centrat */
+    padding: 1rem; /* Spațiu interior */
+    border: 2px solid #ddd; /* Chenar subțire */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Umbră deasupra */
+    z-index: 1000; /* Asigură-te că este deasupra altor elemente */
+    font-size: 1rem; /* Dimensiunea textului */
+    font-weight: bold; /* Text îngroșat */
+}main {
+    padding-bottom: 4rem; /* Adaugă spațiu pentru footer */
+}
+/* Stilizare pentru secțiunea de informații */
+.info-container {
+    max-width: 800px; /* Lățimea maximă a chenarului */
+    margin: 5rem auto; /* Centrează secțiunea pe orizontală și adaugă spațiu sus-jos */
+    padding: 2rem; /* Spațiu interior */
+    background-color: #fff; /* Fundal alb */
+    border: 2px solid #ddd; /* Chenar subțire */
+    border-radius: 10px; /* Colțuri rotunjite */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Umbră pentru chenar */
+    text-align: center; /* Centrează textul pe orizontală */
+    color: #333; /* Culoarea textului */
+    font-size: 1.2rem; /* Dimensiunea textului */
+    line-height: 1.8; /* Înălțimea liniilor */
+}

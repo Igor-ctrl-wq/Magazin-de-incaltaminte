@@ -78,3 +78,22 @@ document.getElementById("buton-contacte").addEventListener("click", () => {
 });
 
 
+function afiseazaNotificare(mesaj) {
+    const notificare = document.getElementById("notificare");
+    notificare.textContent = mesaj; // Setează mesajul notificării
+    notificare.style.display = "block"; // Afișează notificarea
+
+    // Ascunde notificarea după 3 secunde
+    setTimeout(() => {
+        notificare.style.display = "none";
+    }, 3000);
+}
+function adaugaInCos(idProdus) {
+    const produs = produse.find((p) => p.id === idProdus);
+    if (produs) {
+        const cos = JSON.parse(localStorage.getItem("cos")) || [];
+        cos.push(produs);
+        localStorage.setItem("cos", JSON.stringify(cos));
+        afiseazaNotificare(`${produs.nume} a fost adăugat în coș!`);
+    }
+}

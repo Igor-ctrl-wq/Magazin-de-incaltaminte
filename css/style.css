@@ -168,3 +168,35 @@ footer {
     font-size: 1.2rem; /* Dimensiunea textului */
     line-height: 1.8; /* Înălțimea liniilor */
 }
+.buton-cos {
+    position: absolute; /* Poziționează butonul relativ la pagina întreagă */
+    top: 1rem; /* Poziționează-l la 1rem de sus */
+    right: 1rem; /* Poziționează-l la 1rem de marginea dreaptă */
+    background-color: #34c759; /* Culoarea de fundal */
+    color: white; /* Culoarea pictogramei */
+    border: none; /* Elimină chenarul */
+    padding: 0.5rem; /* Spațiu interior */
+    border-radius: 50%; /* Face butonul rotund */
+    cursor: pointer; /* Cursor pointer pentru hover */
+    font-size: 1.5rem; /* Dimensiunea pictogramei */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră pentru buton */
+    transition: background-color 0.3s ease; /* Tranziție pentru hover */
+}
+
+.buton-cos:hover {
+    background-color: #28a745; /* Culoare mai închisă la hover */
+}
+.notificare {
+    position: fixed; /* Poziționează notificarea relativ la fereastră */
+    top: 1rem; /* Poziționează notificarea la 1rem de sus */
+    right: 1rem; /* Poziționează notificarea la 1rem de marginea dreaptă */
+    background-color: #34c759; /* Fundal verde */
+    color: white; /* Text alb */
+    padding: 1rem 1.5rem; /* Spațiu interior */
+    border-radius: 5px; /* Colțuri rotunjite */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Umbră pentru notificare */
+    font-size: 1rem; /* Dimensiunea textului */
+    font-weight: bold; /* Text îngroșat */
+    display: none; /* Ascunde notificarea implicit */
+    z-index: 1000; /* Asigură-te că este deasupra altor elemente */
+}

@@ -48,8 +48,6 @@ function adaugaInCos(idProdus) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", afiseazaProduse);
-
 // Array pentru a stoca produsele din coș
 let cos = [];
 
@@ -77,7 +75,6 @@ document.getElementById("buton-contacte").addEventListener("click", () => {
     alert("Navighează la pagina de contacte!");
 });
 
-
 function afiseazaNotificare(mesaj) {
     const notificare = document.getElementById("notificare");
     notificare.textContent = mesaj; // Setează mesajul notificării
@@ -88,6 +85,7 @@ function afiseazaNotificare(mesaj) {
         notificare.style.display = "none";
     }, 3000);
 }
+
 function adaugaInCos(idProdus) {
     const produs = produse.find((p) => p.id === idProdus);
     if (produs) {
@@ -97,3 +95,27 @@ function adaugaInCos(idProdus) {
         afiseazaNotificare(`${produs.nume} a fost adăugat în coș!`);
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Generare antet
+    const header = document.createElement("header");
+    header.innerHTML = `
+        <h1 class="titlu-header">Shoes.md</h1>
+        <nav>
+            <button onclick="window.location.href='contacte.html'">Contacte</button>
+            <button class="buton-cos" onclick="window.location.href='cos.html'">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+            <button onclick="window.location.href='informatii.html'">Informații</button>
+        </nav>
+    `;
+    document.body.prepend(header);
+
+    // Generare footer
+    const footer = document.createElement("footer");
+    footer.innerHTML = `<p>&copy; 2025 Magazin de Încălțăminte.</p>`;
+    document.body.appendChild(footer);
+
+    // Generare secțiune produse
+    afiseazaProduse();
+});

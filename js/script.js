@@ -1,4 +1,3 @@
-// JavaScript
 const produse = [
     { id: 1, nume: "Nike Air Max", pret: 2500, imagine: "img/Nike Air Max.jpg" },
     { id: 2, nume: "Adidas Ultraboost", pret: 2000, imagine: "img/Adidas Ultraboost.jpg" },
@@ -42,16 +41,14 @@ function adaugaInCos(idProdus) {
     const produs = produse.find((p) => p.id === idProdus);
     if (produs) {
         cos.push(produs);
-        localStorage.setItem("cos", JSON.stringify(cos)); // Salvează coșul în localStorage
+        localStorage.setItem("cos", JSON.stringify(cos));
         actualizeazaCos();
         alert(`${produs.nume} a fost adăugat în coș!`);
     }
 }
 
-// Array pentru a stoca produsele din coș
 let cos = [];
 
-// Funcție pentru a afișa produsele
 function afiseazaProduse() {
     const containerProduse = document.getElementById("produse");
     produse.forEach((produs) => {
@@ -67,20 +64,11 @@ function afiseazaProduse() {
     });
 }
 
-document.getElementById("buton-meniu").addEventListener("click", () => {
-    alert("Navighează la meniul principal!");
-});
-
-document.getElementById("buton-contacte").addEventListener("click", () => {
-    alert("Navighează la pagina de contacte!");
-});
-
 function afiseazaNotificare(mesaj) {
     const notificare = document.getElementById("notificare");
-    notificare.textContent = mesaj; // Setează mesajul notificării
-    notificare.style.display = "block"; // Afișează notificarea
+    notificare.textContent = mesaj;
+    notificare.style.display = "block";
 
-    // Ascunde notificarea după 3 secunde
     setTimeout(() => {
         notificare.style.display = "none";
     }, 3000);
@@ -97,7 +85,6 @@ function adaugaInCos(idProdus) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Generare antet
     const header = document.createElement("header");
     header.innerHTML = `
         <h1 class="titlu-header">Shoes.md</h1>
@@ -111,11 +98,36 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.body.prepend(header);
 
-    // Generare footer
     const footer = document.createElement("footer");
     footer.innerHTML = `<p>&copy; 2025 Magazin de Încălțăminte.</p>`;
     document.body.appendChild(footer);
 
-    // Generare secțiune produse
     afiseazaProduse();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const butonMeniu = document.getElementById("buton-meniu");
+    if (butonMeniu) {
+        butonMeniu.addEventListener("click", () => {
+            alert("Navighează la meniul principal!");
+        });
+    }
+
+    const butonContacte = document.getElementById("buton-contacte");
+    if (butonContacte) {
+        butonContacte.addEventListener("click", () => {
+            alert("Navighează la pagina de contacte!");
+        });
+    }
+});
+
+document.getElementById("search-button").addEventListener("click", () => {
+    const searchTerm = document.getElementById("search-bar").value.toLowerCase();
+    const produsGasit = produse.find((produs) => produs.nume.toLowerCase().includes(searchTerm));
+
+    if (produsGasit) {
+        alert(`Produs găsit: ${produsGasit.nume} - Preț: ${produsGasit.pret} MDL`);
+    } else {
+        alert("Produsul nu a fost găsit.");
+    }
 });
